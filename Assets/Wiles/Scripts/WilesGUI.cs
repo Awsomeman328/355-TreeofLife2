@@ -25,7 +25,7 @@ namespace Wiles {
         {
             levelScript = level.GetComponent<WilesLevelScript>();
             bossController = boss.GetComponent<WilesBossController>();
-            gameOverText.text = $" ";
+            gameOverText.text = " ";
         }
 
         // Update is called once per frame
@@ -36,8 +36,8 @@ namespace Wiles {
             if (bossController.extraHealth > 2) bossController.extraHealth = 2;
             if (bossController.extraHealth == 1) bossExtraBars[1].transform.localScale = new Vector3(0, 0, 0);
             if (bossController.extraHealth == 0) bossExtraBars[0].transform.localScale = new Vector3(0, 0, 0);
-            if (bossController.gameOver) gameOverText.text += $"GAME OVER! \n YOU WIN!";
-            if (levelScript.gameOver) gameOverText.text += $"GAME OVER! \n YOU LOSE!";
+            if (bossController.gameOver) gameOverText.text = "GAME OVER! \n YOU WIN!";
+            if (levelScript.gameOver) gameOverText.text = "GAME OVER! \n YOU LOSE!";
         }
     }
 }

@@ -26,11 +26,16 @@ namespace Wiles
         // Update is called once per frame
         void Update()
         {
-            
-            if (Input.GetMouseButtonDown(0))
+            if (!gameOver)
             {
-                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                ShootProjectile();
+                if (Input.GetMouseButtonDown(0))
+                {
+                    ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    ShootProjectile();
+                }
+            } else
+            {
+                if (player != null) Destroy(player);
             }
         }
         void ShootProjectile()

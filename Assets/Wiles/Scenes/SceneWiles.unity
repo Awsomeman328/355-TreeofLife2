@@ -1226,7 +1226,7 @@ MonoBehaviour:
   - {fileID: 1984741673}
   player: {fileID: 1108057927}
   playerHealthBar: {fileID: 1582693040}
-  gameOverText: {fileID: 0}
+  gameOverText: {fileID: 1432293518}
   level: {fileID: 1142252272}
 --- !u!1001 &603780253
 PrefabInstance:
@@ -4779,7 +4779,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'GAME OVER!
+
+    YOU ...!'
 --- !u!222 &1432293519
 CanvasRenderer:
   m_ObjectHideFlags: 0
