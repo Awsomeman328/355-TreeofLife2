@@ -30,11 +30,14 @@ namespace Wiles
 
         public Transform attackTarget { get; private set; }
 
+        //GameObject boss;
+
         // Start is called before the first frame update
         void Start()
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if(player !=null) attackTarget = player.transform;
+            
         }
 
         public void takeDamage(float dmg)
@@ -59,6 +62,7 @@ namespace Wiles
             if (currentState == null) SwitchToState( new WilesBossStateIdle());
             if (currentState != null) SwitchToState(currentState.Update(this));
             //test();
+            rotateTowardsTarget();
             if (gameOver) SwitchToState(new WilesBossStateDying());
         }
 
@@ -102,6 +106,13 @@ namespace Wiles
                 }
             }
             return false;
+        }
+        void rotateTowardsTarget()
+        {
+            if (CanSeeAttackTarget())
+            {
+                this.gameObject.transform.eulerAngles = VectorToAttackTarget();
+            }
         }
 
 
